@@ -21,7 +21,7 @@ struct Page: View, Identifiable {
   }
   
   var body: some View {
-    NavigationLink(destination: MultipleModalView()) {
+    NavigationLink(destination: destination) {
       Text(title)
     }
   }
@@ -30,7 +30,8 @@ struct Page: View, Identifiable {
 struct ContentView: View {
   
   private let pages: [Page] = [
-    Page(title: "ModalPresentation", destination: MultipleModalView())
+    Page(title: "ModalPresentation", destination: MultipleModalView()),
+    Page(title: "CustomButtonView", destination: CustomButtonView()),
   ]
   
   var body: some View {

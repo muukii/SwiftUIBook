@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B31017D2300643E006788EF /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B31017C2300643E006788EF /* CustomButtonView.swift */; };
+		4B3101802300663C006788EF /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; };
+		4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4BF98F6D22EDF81700227849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F6C22EDF81700227849 /* AppDelegate.swift */; };
 		4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F6E22EDF81700227849 /* SceneDelegate.swift */; };
 		4BF98F7122EDF81700227849 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F7022EDF81700227849 /* ContentView.swift */; };
@@ -16,7 +19,23 @@
 		4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F8222EDF84500227849 /* MultipleModalView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4B3101822300663C006788EF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4B31017C2300643E006788EF /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		4B31017E2300662F006788EF /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		4BF98F6922EDF81700227849 /* SwiftUIBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF98F6C22EDF81700227849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF98F6E22EDF81700227849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,15 +52,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3101802300663C006788EF /* RevealServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B31017B2300642C006788EF /* CustomButton */ = {
+			isa = PBXGroup;
+			children = (
+				4B31017C2300643E006788EF /* CustomButtonView.swift */,
+			);
+			path = CustomButton;
+			sourceTree = "<group>";
+		};
 		4BF98F6022EDF81700227849 = {
 			isa = PBXGroup;
 			children = (
+				4B31017E2300662F006788EF /* RevealServer.framework */,
 				4BF98F6B22EDF81700227849 /* SwiftUIBook */,
 				4BF98F6A22EDF81700227849 /* Products */,
 			);
@@ -81,6 +110,7 @@
 		4BF98F8022EDF81E00227849 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4B31017B2300642C006788EF /* CustomButton */,
 				4BF98F8122EDF82600227849 /* MultipleModal */,
 			);
 			path = Screens;
@@ -104,6 +134,7 @@
 				4BF98F6522EDF81700227849 /* Sources */,
 				4BF98F6622EDF81700227849 /* Frameworks */,
 				4BF98F6722EDF81700227849 /* Resources */,
+				4B3101822300663C006788EF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B31017D2300643E006788EF /* CustomButtonView.swift in Sources */,
 				4BF98F6D22EDF81700227849 /* AppDelegate.swift in Sources */,
 				4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */,
 				4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */,
@@ -307,6 +339,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SwiftUIBook/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SwiftUIBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -326,6 +362,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SwiftUIBook/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SwiftUIBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
