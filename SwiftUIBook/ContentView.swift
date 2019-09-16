@@ -32,6 +32,8 @@ struct ContentView: View {
   private let pages: [Page] = [
     Page(title: "ModalPresentation", destination: MultipleModalView()),
     Page(title: "CustomButtonView", destination: CustomButtonView()),
+    Page(title: "IgnoringSafeAreaInsetsView", destination: IgnoringSafeAreaInsetsView()),
+    Page(title: "PublishedContentView", destination: PublishedContentView()),
   ]
   
   var body: some View {
