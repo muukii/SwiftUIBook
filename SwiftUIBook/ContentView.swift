@@ -34,6 +34,7 @@ struct ContentView: View {
     Page(title: "CustomButtonView", destination: CustomButtonView()),
     Page(title: "IgnoringSafeAreaInsetsView", destination: IgnoringSafeAreaInsetsView()),
     Page(title: "PublishedContentView", destination: PublishedContentView()),
+    Page(title: "Flux", destination: FluxContentView()),
   ]
   
   var body: some View {
