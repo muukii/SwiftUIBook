@@ -9,35 +9,35 @@ public struct _Mutation<State> {
   }
 }
 
-public struct _Action<State, Operations: OperationsType, ReturnType> where Operations.TargetState == State {
+public struct _Action<State, Reducer: ReducerType, ReturnType> where Reducer.TargetState == State {
   
-  let action: (DispatchContext<State, Operations>) -> ReturnType
+  let action: (DispatchContext<State, Reducer>) -> ReturnType
   
-  public init(action: @escaping (DispatchContext<State, Operations>) -> ReturnType) {
+  public init(action: @escaping (DispatchContext<State, Reducer>) -> ReturnType) {
     self.action = action
   }
 }
 
-public protocol OperationsType {
+public protocol ReducerType {
   associatedtype TargetState
   
   typealias Mutation = _Mutation<TargetState>
   typealias Action<ReturnType> = _Action<TargetState, Self, ReturnType>
 }
 
-public final class DispatchContext<State, Operations: OperationsType> where Operations.TargetState == State {
+public final class DispatchContext<State, Reducer: ReducerType> where Reducer.TargetState == State {
   
-  private let store: StoreBase<State, Operations>
+  private let store: StoreBase<State, Reducer>
   
-  init(store: StoreBase<State, Operations>) {
+  init(store: StoreBase<State, Reducer>) {
     self.store = store
   }
   
-  public func dispatch<ReturnType>(_ makeAction: (Operations) -> Operations.Action<ReturnType>) -> ReturnType {
+  public func dispatch<ReturnType>(_ makeAction: (Reducer) -> Reducer.Action<ReturnType>) -> ReturnType {
     store.dispatch(makeAction)
   }
   
-  public func dispatch(_ makeMutation: (Operations) -> Operations.Mutation) {
+  public func dispatch(_ makeMutation: (Reducer) -> Reducer.Mutation) {
     store.dispatch(makeMutation)
   }
 }
@@ -102,18 +102,18 @@ final class Storage<Value> {
   
 }
 
-public struct StoreKey<State, Operations: OperationsType> : Hashable where Operations.TargetState == State {
+public struct StoreKey<State, Reducer: ReducerType> : Hashable where Reducer.TargetState == State {
   
   public let rawKey: String
   
   public init(additionalKey: String = "") {
 //    let baseKey = "\(String(reflecting: State.self)):\(String(reflecting: Operations.self))"
-    let baseKey = "\(String(reflecting: StoreKey<State, Operations>.self))"
+    let baseKey = "\(String(reflecting: StoreKey<State, Reducer>.self))"
     let key = baseKey + additionalKey
     self.rawKey = key
   }
   
-  public init(from store: StoreBase<State, Operations>, additionalKey: String = "") {
+  public init(from store: StoreBase<State, Reducer>, additionalKey: String = "") {
     self = StoreKey.init(additionalKey: additionalKey)
   }
   
@@ -122,12 +122,12 @@ public struct StoreKey<State, Operations: OperationsType> : Hashable where Opera
   }
 }
 
-public protocol StoreType where Operations.TargetState == State {
+public protocol StoreType where Reducer.TargetState == State {
   associatedtype State
-  associatedtype Operations: OperationsType
+  associatedtype Reducer: ReducerType
   
-  func dispatch<ReturnType>(_ makeAction: (Operations) -> Operations.Action<ReturnType>) -> ReturnType
-  func dispatch(_ makeMutation: (Operations) -> Operations.Mutation)
+  func dispatch<ReturnType>(_ makeAction: (Reducer) -> Reducer.Action<ReturnType>) -> ReturnType
+  func dispatch(_ makeMutation: (Reducer) -> Reducer.Mutation)
 }
 
 public struct RegistrationToken {
@@ -143,13 +143,13 @@ public struct RegistrationToken {
   }
 }
 
-public class StoreBase<State, Operations: OperationsType>: StoreType where Operations.TargetState == State {
+public class StoreBase<State, Reducer: ReducerType>: StoreType where Reducer.TargetState == State {
   
-  public func dispatch<ReturnType>(_ makeAction: (Operations) -> _Action<Operations.TargetState, Operations, ReturnType>) -> ReturnType {
+  public func dispatch<ReturnType>(_ makeAction: (Reducer) -> _Action<Reducer.TargetState, Reducer, ReturnType>) -> ReturnType {
     fatalError()
   }
   
-  public func dispatch(_ makeMutation: (Operations) -> _Mutation<Operations.TargetState>) {
+  public func dispatch(_ makeMutation: (Reducer) -> _Mutation<Reducer.TargetState>) {
     fatalError()
   }
     
@@ -158,7 +158,7 @@ public class StoreBase<State, Operations: OperationsType>: StoreType where Opera
   
   private var registrationToken: RegistrationToken?
   
-  func register<S, O: OperationsType>(store: StoreBase<S, O>, for key: String) -> RegistrationToken where O.TargetState == S {
+  func register<S, O: ReducerType>(store: StoreBase<S, O>, for key: String) -> RegistrationToken where O.TargetState == S {
     
     let key = StoreKey<S, O>.init(from: store).rawKey
     lock.lock()
@@ -179,7 +179,7 @@ public class StoreBase<State, Operations: OperationsType>: StoreType where Opera
   
 }
 
-public final class Store<State, Operations: OperationsType>: StoreBase<State, Operations> where Operations.TargetState == State {
+public final class Store<State, Reducer: ReducerType>: StoreBase<State, Reducer> where Reducer.TargetState == State {
   
   public var state: State {
     storage.value
@@ -187,33 +187,33 @@ public final class Store<State, Operations: OperationsType>: StoreBase<State, Op
   
   let storage: Storage<State>
   
-  private let operations: Operations
+  private let operations: Reducer
   
   private let lock = NSLock()
   
   public init(
     state: State,
-    operations: Operations
+    operations: Reducer
   ) {
     self.storage = .init(state)
     self.operations = operations
   }
   
-  public override func dispatch<ReturnType>(_ makeAction: (Operations) -> Operations.Action<ReturnType>) -> ReturnType {
-    let context = DispatchContext<State, Operations>.init(store: self)
+  public override func dispatch<ReturnType>(_ makeAction: (Reducer) -> Reducer.Action<ReturnType>) -> ReturnType {
+    let context = DispatchContext<State, Reducer>.init(store: self)
     let action = makeAction(operations)
     let result = action.action(context)
     return result
   }
   
-  public override func dispatch(_ makeMutation: (Operations) -> Operations.Mutation) {
+  public override func dispatch(_ makeMutation: (Reducer) -> Reducer.Mutation) {
     let mutation = makeMutation(operations)
     storage.update { (state) in
       mutation.mutate(&state)
     }
   }
   
-  public func makeScoped<ScopedState, ScopedOperations: OperationsType>(
+  public func makeScoped<ScopedState, ScopedOperations: ReducerType>(
     scope: WritableKeyPath<State, ScopedState>,
     operations: ScopedOperations
   ) -> ScopedStore<State, ScopedState, ScopedOperations> where ScopedOperations.TargetState == ScopedState {
@@ -229,20 +229,20 @@ public final class Store<State, Operations: OperationsType>: StoreBase<State, Op
   
 }
 
-public final class ScopedStore<SourceState, State, Operations: OperationsType>: StoreBase<State, Operations> where Operations.TargetState == State {
+public final class ScopedStore<SourceState, State, Reducer: ReducerType>: StoreBase<State, Reducer> where Reducer.TargetState == State {
   
   public var state: State {
     storage.value[keyPath: scopeSelector]
   }
   
-  private let operations: Operations
+  private let operations: Reducer
   let storage: Storage<SourceState>
   private let scopeSelector: WritableKeyPath<SourceState, State>
   
-  init<SourceOperations: OperationsType>(
+  init<SourceOperations: ReducerType>(
     store: Store<SourceState, SourceOperations>,
     scopeSelector: WritableKeyPath<SourceState, State>,
-    operations: Operations
+    operations: Reducer
   ) {
     
     self.storage = store.storage
@@ -251,14 +251,14 @@ public final class ScopedStore<SourceState, State, Operations: OperationsType>: 
     
   }
   
-  public override func dispatch<ReturnType>(_ makeAction: (Operations) -> Operations.Action<ReturnType>) -> ReturnType {
-    let context = DispatchContext<State, Operations>.init(store: self)
+  public override func dispatch<ReturnType>(_ makeAction: (Reducer) -> Reducer.Action<ReturnType>) -> ReturnType {
+    let context = DispatchContext<State, Reducer>.init(store: self)
     let action = makeAction(operations)
     let result = action.action(context)
     return result
   }
     
-  public override func dispatch(_ makeMutation: (Operations) -> Operations.Mutation) {
+  public override func dispatch(_ makeMutation: (Reducer) -> Reducer.Mutation) {
     let mutation = makeMutation(operations)
     storage.update { (sourceState) in
       mutation.mutate(&sourceState[keyPath: scopeSelector])

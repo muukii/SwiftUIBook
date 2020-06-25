@@ -30,11 +30,13 @@ struct Page: View, Identifiable {
 struct ContentView: View {
   
   private let pages: [Page] = [
+    Page(title: "Matched", destination: BookMatchedAnimationView()),
     Page(title: "ModalPresentation", destination: MultipleModalView()),
     Page(title: "CustomButtonView", destination: CustomButtonView()),
     Page(title: "IgnoringSafeAreaInsetsView", destination: IgnoringSafeAreaInsetsView()),
     Page(title: "PublishedContentView", destination: PublishedContentView()),
     Page(title: "Flux", destination: FluxContentView()),
+    Page(title: "MountUnmountTransitionView", destination: MountUnmountTransitionView()),
   ]
   
   var body: some View {

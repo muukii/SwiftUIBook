@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B01C2B924A52E4700F514B7 /* BookMatchedAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */; };
 		4B31017D2300643E006788EF /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B31017C2300643E006788EF /* CustomButtonView.swift */; };
 		4B3101802300663C006788EF /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; };
 		4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -14,6 +15,12 @@
 		4B93EC5A232F6312002BB30B /* PublishedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC59232F6312002BB30B /* PublishedContentView.swift */; };
 		4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC5C232F6898002BB30B /* FluxContentView.swift */; };
 		4B93EC61232FED89002BB30B /* Verge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC60232FED89002BB30B /* Verge.swift */; };
+		4BA373582495C23E00AE4F6C /* Component.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BA373562495C23E00AE4F6C /* Component.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BA3735B2495C23E00AE4F6C /* Component.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA373542495C23E00AE4F6C /* Component.framework */; };
+		4BA3735C2495C23E00AE4F6C /* Component.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA373542495C23E00AE4F6C /* Component.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4BA373622495C24500AE4F6C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA373612495C24500AE4F6C /* SwiftUI.framework */; };
+		4BA373642495C2A000AE4F6C /* VergeLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA373632495C2A000AE4F6C /* VergeLogoView.swift */; };
+		4BA6491823DCA9B600F3CCEB /* MountUnmountTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */; };
 		4BF98F6D22EDF81700227849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F6C22EDF81700227849 /* AppDelegate.swift */; };
 		4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F6E22EDF81700227849 /* SceneDelegate.swift */; };
 		4BF98F7122EDF81700227849 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F7022EDF81700227849 /* ContentView.swift */; };
@@ -23,6 +30,16 @@
 		4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F8222EDF84500227849 /* MultipleModalView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4BA373592495C23E00AE4F6C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4BF98F6122EDF81700227849 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BA373532495C23E00AE4F6C;
+			remoteInfo = Component;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		4B3101822300663C006788EF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -30,6 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				4BA3735C2495C23E00AE4F6C /* Component.framework in Embed Frameworks */,
 				4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -38,12 +56,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMatchedAnimationView.swift; sourceTree = "<group>"; };
 		4B31017C2300643E006788EF /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		4B31017E2300662F006788EF /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		4B3ED5FC232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoringSafeAreaInsetsView.swift; sourceTree = "<group>"; };
 		4B93EC59232F6312002BB30B /* PublishedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedContentView.swift; sourceTree = "<group>"; };
 		4B93EC5C232F6898002BB30B /* FluxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContentView.swift; sourceTree = "<group>"; };
 		4B93EC60232FED89002BB30B /* Verge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verge.swift; sourceTree = "<group>"; };
+		4BA373542495C23E00AE4F6C /* Component.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Component.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BA373562495C23E00AE4F6C /* Component.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
+		4BA373572495C23E00AE4F6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BA373612495C24500AE4F6C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		4BA373632495C2A000AE4F6C /* VergeLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VergeLogoView.swift; sourceTree = "<group>"; };
+		4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountUnmountTransitionView.swift; sourceTree = "<group>"; };
 		4BF98F6922EDF81700227849 /* SwiftUIBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF98F6C22EDF81700227849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF98F6E22EDF81700227849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,10 +81,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4BA373512495C23E00AE4F6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA373622495C24500AE4F6C /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BF98F6622EDF81700227849 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA3735B2495C23E00AE4F6C /* Component.framework in Frameworks */,
 				4B3101802300663C006788EF /* RevealServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +101,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B01C2B724A52E3200F514B7 /* MatchedAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */,
+			);
+			path = MatchedAnimation;
+			sourceTree = "<group>";
+		};
 		4B31017B2300642C006788EF /* CustomButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +142,32 @@
 			path = Flux;
 			sourceTree = "<group>";
 		};
+		4BA373552495C23E00AE4F6C /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				4BA373562495C23E00AE4F6C /* Component.h */,
+				4BA373632495C2A000AE4F6C /* VergeLogoView.swift */,
+				4BA373572495C23E00AE4F6C /* Info.plist */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		4BA373602495C24400AE4F6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BA373612495C24500AE4F6C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4BF98F6022EDF81700227849 = {
 			isa = PBXGroup;
 			children = (
 				4B31017E2300662F006788EF /* RevealServer.framework */,
 				4BF98F6B22EDF81700227849 /* SwiftUIBook */,
+				4BA373552495C23E00AE4F6C /* Component */,
 				4BF98F6A22EDF81700227849 /* Products */,
+				4BA373602495C24400AE4F6C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4BF98F6922EDF81700227849 /* SwiftUIBook.app */,
+				4BA373542495C23E00AE4F6C /* Component.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,11 +206,13 @@
 		4BF98F8022EDF81E00227849 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4B01C2B724A52E3200F514B7 /* MatchedAnimation */,
 				4B93EC5B232F687E002BB30B /* Flux */,
 				4B93EC58232F6304002BB30B /* Published */,
 				4B3ED5FB232E4A3E00D68739 /* IgnoreringSafeAreaInsets */,
 				4B31017B2300642C006788EF /* CustomButton */,
 				4BF98F8122EDF82600227849 /* MultipleModal */,
+				4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -162,7 +227,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		4BA3734F2495C23E00AE4F6C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA373582495C23E00AE4F6C /* Component.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		4BA373532495C23E00AE4F6C /* Component */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BA3735F2495C23E00AE4F6C /* Build configuration list for PBXNativeTarget "Component" */;
+			buildPhases = (
+				4BA3734F2495C23E00AE4F6C /* Headers */,
+				4BA373502495C23E00AE4F6C /* Sources */,
+				4BA373512495C23E00AE4F6C /* Frameworks */,
+				4BA373522495C23E00AE4F6C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Component;
+			productName = Component;
+			productReference = 4BA373542495C23E00AE4F6C /* Component.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		4BF98F6822EDF81700227849 /* SwiftUIBook */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BF98F7D22EDF81700227849 /* Build configuration list for PBXNativeTarget "SwiftUIBook" */;
@@ -175,6 +269,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4BA3735A2495C23E00AE4F6C /* PBXTargetDependency */,
 			);
 			name = SwiftUIBook;
 			productName = SwiftUIBook;
@@ -191,6 +286,10 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = muukii;
 				TargetAttributes = {
+					4BA373532495C23E00AE4F6C = {
+						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
+					};
 					4BF98F6822EDF81700227849 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -210,11 +309,19 @@
 			projectRoot = "";
 			targets = (
 				4BF98F6822EDF81700227849 /* SwiftUIBook */,
+				4BA373532495C23E00AE4F6C /* Component */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4BA373522495C23E00AE4F6C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BF98F6722EDF81700227849 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +335,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4BA373502495C23E00AE4F6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BA373642495C2A000AE4F6C /* VergeLogoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4BF98F6522EDF81700227849 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,10 +356,20 @@
 				4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */,
 				4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */,
 				4BF98F7122EDF81700227849 /* ContentView.swift in Sources */,
+				4BA6491823DCA9B600F3CCEB /* MountUnmountTransitionView.swift in Sources */,
+				4B01C2B924A52E4700F514B7 /* BookMatchedAnimationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4BA3735A2495C23E00AE4F6C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BA373532495C23E00AE4F6C /* Component */;
+			targetProxy = 4BA373592495C23E00AE4F6C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4BF98F7722EDF81700227849 /* LaunchScreen.storyboard */ = {
@@ -258,6 +383,63 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4BA3735D2495C23E00AE4F6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Component/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.muukii.Component;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4BA3735E2495C23E00AE4F6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Component/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.muukii.Component;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		4BF98F7B22EDF81700227849 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -375,6 +557,7 @@
 		4BF98F7E22EDF81700227849 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SwiftUIBook/Preview\\ Content";
@@ -384,6 +567,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SwiftUIBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -398,6 +582,7 @@
 		4BF98F7F22EDF81700227849 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SwiftUIBook/Preview\\ Content";
@@ -407,6 +592,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = SwiftUIBook/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,6 +607,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4BA3735F2495C23E00AE4F6C /* Build configuration list for PBXNativeTarget "Component" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BA3735D2495C23E00AE4F6C /* Debug */,
+				4BA3735E2495C23E00AE4F6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4BF98F6422EDF81700227849 /* Build configuration list for PBXProject "SwiftUIBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

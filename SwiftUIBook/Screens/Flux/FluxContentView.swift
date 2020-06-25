@@ -35,7 +35,7 @@ struct AppState {
   var notification: Notification = .init()
 }
 
-struct AppOperations: OperationsType {
+class AppReducer: ReducerType {
   typealias TargetState = AppState
   
   private let dep: Dependency
@@ -61,12 +61,24 @@ struct AppOperations: OperationsType {
 
 let dep = Dependency()
 
-typealias AppStore = Store<AppOperations.TargetState, AppOperations>
+typealias AppStore = Store<AppReducer.TargetState, AppReducer>
 
 let store = AppStore(
   state: AppState(),
-  operations: AppOperations(dep: dep)
+  operations: AppReducer(dep: dep)
 )
+
+
+class FeedReducer: ReducerType {
+  typealias TargetState = AppState.Feed
+  
+  private let dep: Dependency
+  
+  init(dep: Dependency) {
+    self.dep = dep
+  }
+  
+}
 
 struct FluxContentView: View {
   
