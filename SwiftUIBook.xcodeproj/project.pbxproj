@@ -13,6 +13,7 @@
 		4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4B3ED5FD232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ED5FC232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift */; };
 		4B45AA5A24AC97F6003863AF /* BookDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45AA5924AC97F6003863AF /* BookDragView.swift */; };
+		4B45AA5C24ACA187003863AF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45AA5B24ACA187003863AF /* Utility.swift */; };
 		4B93EC5A232F6312002BB30B /* PublishedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC59232F6312002BB30B /* PublishedContentView.swift */; };
 		4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC5C232F6898002BB30B /* FluxContentView.swift */; };
 		4B93EC61232FED89002BB30B /* Verge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC60232FED89002BB30B /* Verge.swift */; };
@@ -62,6 +63,7 @@
 		4B31017E2300662F006788EF /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		4B3ED5FC232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoringSafeAreaInsetsView.swift; sourceTree = "<group>"; };
 		4B45AA5924AC97F6003863AF /* BookDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDragView.swift; sourceTree = "<group>"; };
+		4B45AA5B24ACA187003863AF /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		4B93EC59232F6312002BB30B /* PublishedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedContentView.swift; sourceTree = "<group>"; };
 		4B93EC5C232F6898002BB30B /* FluxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContentView.swift; sourceTree = "<group>"; };
 		4B93EC60232FED89002BB30B /* Verge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verge.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				4BF98F7722EDF81700227849 /* LaunchScreen.storyboard */,
 				4BF98F7A22EDF81700227849 /* Info.plist */,
 				4BF98F7422EDF81700227849 /* Preview Content */,
+				4B45AA5B24ACA187003863AF /* Utility.swift */,
 			);
 			path = SwiftUIBook;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				4BF98F6D22EDF81700227849 /* AppDelegate.swift in Sources */,
 				4B45AA5A24AC97F6003863AF /* BookDragView.swift in Sources */,
 				4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */,
+				4B45AA5C24ACA187003863AF /* Utility.swift in Sources */,
 				4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */,
 				4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */,
 				4BF98F7122EDF81700227849 /* ContentView.swift in Sources */,
