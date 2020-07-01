@@ -12,6 +12,7 @@
 		4B3101802300663C006788EF /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; };
 		4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4B3ED5FD232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B3ED5FC232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift */; };
+		4B45AA5A24AC97F6003863AF /* BookDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B45AA5924AC97F6003863AF /* BookDragView.swift */; };
 		4B93EC5A232F6312002BB30B /* PublishedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC59232F6312002BB30B /* PublishedContentView.swift */; };
 		4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC5C232F6898002BB30B /* FluxContentView.swift */; };
 		4B93EC61232FED89002BB30B /* Verge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B93EC60232FED89002BB30B /* Verge.swift */; };
@@ -60,6 +61,7 @@
 		4B31017C2300643E006788EF /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		4B31017E2300662F006788EF /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		4B3ED5FC232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoringSafeAreaInsetsView.swift; sourceTree = "<group>"; };
+		4B45AA5924AC97F6003863AF /* BookDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDragView.swift; sourceTree = "<group>"; };
 		4B93EC59232F6312002BB30B /* PublishedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishedContentView.swift; sourceTree = "<group>"; };
 		4B93EC5C232F6898002BB30B /* FluxContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluxContentView.swift; sourceTree = "<group>"; };
 		4B93EC60232FED89002BB30B /* Verge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verge.swift; sourceTree = "<group>"; };
@@ -101,14 +103,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4B01C2B724A52E3200F514B7 /* MatchedAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */,
-			);
-			path = MatchedAnimation;
-			sourceTree = "<group>";
-		};
 		4B31017B2300642C006788EF /* CustomButton */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,13 +200,14 @@
 		4BF98F8022EDF81E00227849 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				4B01C2B724A52E3200F514B7 /* MatchedAnimation */,
+				4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */,
 				4B93EC5B232F687E002BB30B /* Flux */,
 				4B93EC58232F6304002BB30B /* Published */,
 				4B3ED5FB232E4A3E00D68739 /* IgnoreringSafeAreaInsets */,
 				4B31017B2300642C006788EF /* CustomButton */,
 				4BF98F8122EDF82600227849 /* MultipleModal */,
 				4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */,
+				4B45AA5924AC97F6003863AF /* BookDragView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -352,6 +347,7 @@
 				4B93EC5A232F6312002BB30B /* PublishedContentView.swift in Sources */,
 				4B31017D2300643E006788EF /* CustomButtonView.swift in Sources */,
 				4BF98F6D22EDF81700227849 /* AppDelegate.swift in Sources */,
+				4B45AA5A24AC97F6003863AF /* BookDragView.swift in Sources */,
 				4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */,
 				4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */,
 				4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */,
@@ -561,6 +557,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SwiftUIBook/Preview\\ Content";
+				DEVELOPMENT_TEAM = KU2QEJ9K3Z;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -586,6 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "SwiftUIBook/Preview\\ Content";
+				DEVELOPMENT_TEAM = KU2QEJ9K3Z;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
