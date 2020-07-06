@@ -10,7 +10,7 @@ import Foundation
 
 import SwiftUI
 
-struct MountUnmountTransitionView: View {
+struct MountUnmountTransitionView: BookView {
   
   @State private var flag = false
   

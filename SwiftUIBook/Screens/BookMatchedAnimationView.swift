@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BookMatchedAnimationView: View {
+struct BookMatchedAnimationView: BookView {
 
   @State var shows: Bool = false
 

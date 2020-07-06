@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PublishedContentView: View {
+struct PublishedContentView: BookView {
   
   @ObservedObject private var store: __Store = .init()
   

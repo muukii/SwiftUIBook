@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct IgnoringSafeAreaInsetsView: View {
+struct IgnoringSafeAreaInsetsView: BookView {
   
   var body: some View {
     

@@ -1,35 +1,69 @@
 import SwiftUI
 
-struct BookDragView: View {
+struct LayerModel: Equatable {
+  let id = UUID().uuidString
+}
+
+struct BookDragView: BookView {
+
+  var title: String {
+    "Dragging View"
+  }
+
+  var summary: String {
+    "A book "
+  }
 
   @State private var currentPosition: CGSize = .zero
   @State private var newPosition: CGSize = .zero
+
+  @State var selectedLayerID: String?
+  @State var layers: [LayerModel] = []
 
   var body: some View {
     ZStack {
 
       Color.white.opacity(0.001) /** to enable hit testing*/
 
-      ZStack {
-        DraggableView {
-          Components.MockView(name: "MyView")
-        }
-        DraggableView {
-          ExpandableView {
-            Circle()
-              .frame(width: 100, height: 100)
-              .foregroundColor(Color.red)
+      VStack {
+
+        Button(action: {
+          addLayer()
+        }, label: {
+          Text("Add Layer")
+        })
+
+        ZStack {
+
+          ForEach(layers, id: \.id) { layer in
+
+            DraggableView(
+              isSelected: layer.id == selectedLayerID,
+              onSelected: {
+                selectedLayerID = layer.id
+              },
+              content: { isSelected in
+                ExpandableView(isSelected: isSelected) {
+                  Components.MockView(name: "MyView")
+                }
+              })
+              .fixedSize()
+              .transition(AnyTransition.scale.animation(.spring(response: 0.4, dampingFraction: 0.8, blendDuration: 0)))
+
           }
+
         }
-        //        DraggableView {
-        //          Circle()
-        //            .frame(width: 100, height: 100)
-        //            .foregroundColor(Color.red)
-        //        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
       }
     }
     .onTapGesture {
       UIApplication.shared.endEditing()
+    }
+  }
+
+  private func addLayer() {
+    withAnimation {
+      layers.append(.init())
     }
   }
 
@@ -50,7 +84,15 @@ extension BookDragView {
       var body: some View {
         RoundedRectangle(cornerRadius: 16, style: .continuous)
           .fill(Color(white: 0).opacity(0.1))
-          .frame(width: 100, height: 100)
+          .frame(
+            minWidth: 0,
+            idealWidth: nil,
+            maxWidth: .infinity,
+            minHeight: 0,
+            idealHeight: nil,
+            maxHeight: .infinity,
+            alignment: .center
+          )
           .overlay(
             VStack {
               HStack {
@@ -74,16 +116,22 @@ extension BookDragView {
 
     private let content: Content
 
-    @State private var modifiedFrame: CGSize?
+    @State private var modifiedFrame: CGSize? = CGSize(width: 100, height: 100)
 
-    init(@ViewBuilder content: () -> Content) {
+    private let isSelected: Bool
+
+    init(
+      isSelected: Bool,
+      @ViewBuilder content: () -> Content
+    ) {
+      self.isSelected = isSelected
       self.content = content()
     }
 
     var body: some View {
       content
-        .frame(width: modifiedFrame?.width, height: modifiedFrame?.height)
-        .padding(8)
+        .frame(idealWidth: modifiedFrame?.width, idealHeight: modifiedFrame?.height)
+        .padding(12)
         .overlay(
           GeometryReader { (arg: GeometryProxy) in
             ZStack {
@@ -98,7 +146,7 @@ extension BookDragView {
                   updateSize(translateX: nil, translateY: translationY * -1, containerSize: arg.size)
                 }
               }
-              .padding(.horizontal, 16)
+              .padding(.horizontal, 20)
               HStack {
                 VerticalHandleView { translationX in
                   updateSize(translateX: translationX * -1, translateY: nil, containerSize: arg.size)
@@ -110,17 +158,22 @@ extension BookDragView {
                   updateSize(translateX: translationX, translateY: nil, containerSize: arg.size)
                 }
               }
-              .padding(.vertical, 16)
+              .padding(.vertical, 20)
             }
           }
+          .padding(4)
+          .background(
+            Color(white: 0.1)
+              .opacity(0.1)
+              .mask(RoundedRectangle(cornerRadius: 16, style: .continuous))
+          )
+          .opacity(isSelected ? 1 : 0)
         )
     }
 
     private func updateSize(translateX: CGFloat?, translateY: CGFloat?, containerSize: CGSize) {
 
       var size = modifiedFrame ?? containerSize
-
-      print(translateX, translateY)
 
       translateX.map {
         size.width += $0
@@ -202,10 +255,18 @@ extension BookDragView {
     @State private var currentPosition: CGPoint = .zero
     @State private var newPosition: CGPoint = .zero
 
+    private let isSelected: Bool
     private let content: Content
+    private let onSelected: () -> Void
 
-    init(@ViewBuilder content: () -> Content) {
-      self.content = content()
+    init(
+      isSelected: Bool,
+      onSelected: @escaping () -> Void,
+      @ViewBuilder content: (Bool) -> Content
+    ) {
+      self.isSelected = isSelected
+      self.onSelected = onSelected
+      self.content = content(isSelected)
     }
 
     var body: some View {
@@ -214,10 +275,9 @@ extension BookDragView {
         .onHover { hovering in
           print(hovering)
         }
-        .background(Color(white: 0.1).opacity(0.1).mask(RoundedRectangle(cornerRadius: 16, style: .continuous)))
         .offset(x: currentPosition.x, y: currentPosition.y)
         .gesture(
-          DragGesture()
+          DragGesture(minimumDistance: 1)
             .onChanged { value in
               currentPosition = .init(
                 x: value.translation.width + newPosition.x,
@@ -232,6 +292,9 @@ extension BookDragView {
               newPosition = currentPosition
             }
         )
+        .onTapGesture {
+          onSelected()
+        }
     }
 
   }
@@ -242,7 +305,7 @@ struct BookDragView_Previews: PreviewProvider {
     Group {
       BookDragView.Components.MockView(name: "MyView")
 
-      BookDragView.ExpandableView {
+      BookDragView.ExpandableView(isSelected: true) {
         Text("aa")
           .padding(16)
           .background(Color.orange)

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MultipleModalView: View {
+struct MultipleModalView: BookView {
   
   var body: some View {
     Text("")

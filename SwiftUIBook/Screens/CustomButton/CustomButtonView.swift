@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CustomButtonView: View {
+struct CustomButtonView: BookView {
   
   var body: some View {
     VStack {

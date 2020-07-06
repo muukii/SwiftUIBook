@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4B01C2B924A52E4700F514B7 /* BookMatchedAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */; };
+		4B30FCE424B235C600C46FFD /* BookMessengerAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B30FCE324B235C600C46FFD /* BookMessengerAppView.swift */; };
+		4B30FCE624B2361100C46FFD /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B30FCE524B2361100C46FFD /* Mocks.swift */; };
 		4B31017D2300643E006788EF /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B31017C2300643E006788EF /* CustomButtonView.swift */; };
 		4B3101802300663C006788EF /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; };
 		4B3101812300663C006788EF /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B31017E2300662F006788EF /* RevealServer.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -23,6 +25,8 @@
 		4BA373622495C24500AE4F6C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA373612495C24500AE4F6C /* SwiftUI.framework */; };
 		4BA373642495C2A000AE4F6C /* VergeLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA373632495C2A000AE4F6C /* VergeLogoView.swift */; };
 		4BA6491823DCA9B600F3CCEB /* MountUnmountTransitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */; };
+		4BCA228424B2C08000C29B1E /* BookTransitionShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA228324B2C08000C29B1E /* BookTransitionShapeView.swift */; };
+		4BCA228624B2C0A300C29B1E /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA228524B2C0A300C29B1E /* BookView.swift */; };
 		4BF98F6D22EDF81700227849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F6C22EDF81700227849 /* AppDelegate.swift */; };
 		4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F6E22EDF81700227849 /* SceneDelegate.swift */; };
 		4BF98F7122EDF81700227849 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF98F7022EDF81700227849 /* ContentView.swift */; };
@@ -59,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMatchedAnimationView.swift; sourceTree = "<group>"; };
+		4B30FCE324B235C600C46FFD /* BookMessengerAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMessengerAppView.swift; sourceTree = "<group>"; };
+		4B30FCE524B2361100C46FFD /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		4B31017C2300643E006788EF /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		4B31017E2300662F006788EF /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
 		4B3ED5FC232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoringSafeAreaInsetsView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,8 @@
 		4BA373612495C24500AE4F6C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
 		4BA373632495C2A000AE4F6C /* VergeLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VergeLogoView.swift; sourceTree = "<group>"; };
 		4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountUnmountTransitionView.swift; sourceTree = "<group>"; };
+		4BCA228324B2C08000C29B1E /* BookTransitionShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTransitionShapeView.swift; sourceTree = "<group>"; };
+		4BCA228524B2C0A300C29B1E /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
 		4BF98F6922EDF81700227849 /* SwiftUIBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF98F6C22EDF81700227849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4BF98F6E22EDF81700227849 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +187,7 @@
 		4BF98F6B22EDF81700227849 /* SwiftUIBook */ = {
 			isa = PBXGroup;
 			children = (
+				4B30FCE524B2361100C46FFD /* Mocks.swift */,
 				4BF98F8022EDF81E00227849 /* Screens */,
 				4BF98F6C22EDF81700227849 /* AppDelegate.swift */,
 				4BF98F6E22EDF81700227849 /* SceneDelegate.swift */,
@@ -203,6 +212,7 @@
 		4BF98F8022EDF81E00227849 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				4BCA228524B2C0A300C29B1E /* BookView.swift */,
 				4B01C2B824A52E4700F514B7 /* BookMatchedAnimationView.swift */,
 				4B93EC5B232F687E002BB30B /* Flux */,
 				4B93EC58232F6304002BB30B /* Published */,
@@ -211,6 +221,8 @@
 				4BF98F8122EDF82600227849 /* MultipleModal */,
 				4BA6491723DCA9B600F3CCEB /* MountUnmountTransitionView.swift */,
 				4B45AA5924AC97F6003863AF /* BookDragView.swift */,
+				4B30FCE324B235C600C46FFD /* BookMessengerAppView.swift */,
+				4BCA228324B2C08000C29B1E /* BookTransitionShapeView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -346,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B3ED5FD232E4A5400D68739 /* IgnoringSafeAreaInsetsView.swift in Sources */,
+				4BCA228624B2C0A300C29B1E /* BookView.swift in Sources */,
 				4B93EC61232FED89002BB30B /* Verge.swift in Sources */,
 				4B93EC5A232F6312002BB30B /* PublishedContentView.swift in Sources */,
 				4B31017D2300643E006788EF /* CustomButtonView.swift in Sources */,
@@ -354,10 +367,13 @@
 				4BF98F6F22EDF81700227849 /* SceneDelegate.swift in Sources */,
 				4B45AA5C24ACA187003863AF /* Utility.swift in Sources */,
 				4B93EC5D232F6898002BB30B /* FluxContentView.swift in Sources */,
+				4B30FCE424B235C600C46FFD /* BookMessengerAppView.swift in Sources */,
+				4BCA228424B2C08000C29B1E /* BookTransitionShapeView.swift in Sources */,
 				4BF98F8322EDF84500227849 /* MultipleModalView.swift in Sources */,
 				4BF98F7122EDF81700227849 /* ContentView.swift in Sources */,
 				4BA6491823DCA9B600F3CCEB /* MountUnmountTransitionView.swift in Sources */,
 				4B01C2B924A52E4700F514B7 /* BookMatchedAnimationView.swift in Sources */,
+				4B30FCE624B2361100C46FFD /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

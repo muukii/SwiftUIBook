@@ -80,7 +80,7 @@ class FeedReducer: ReducerType {
   
 }
 
-struct FluxContentView: View {
+struct FluxContentView: BookView {
   
   var body: some View {
     FluxTabView().environmentObject(store)
